@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiScientificCalculator.Views.CalculatorPage"
+    Title="Calculator c#"
+    >
+
+
+
+    <Grid
+        RowDefinitions="*,*,*,*,*,*,*,*,*,*"
+        ColumnDefinitions="*,*,*,*,*">
+        <Frame
+            HasShadow="False"
+            Padding="6,0,4,0"
+            Margin="12"
+            
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="5">
+            <Label
+                LineHeight="1.5"
+                VerticalTextAlignment="Center"
+                VerticalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding InputText}"  FontSize="35"  />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Frame>
+
+
+        <Grid            
+            ColumnDefinitions="Auto,*"
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="5">
+
+            <Label
+                Text="="
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center"
+                Margin="16,0"
+                 FontSize="40"/>
+
+            <Label
+                Text="{Binding CalculatedResult, Mode=OneWay}"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="End"
+                Grid.Column="1"
+                Margin="16,0"
+                FontSize="40"
+                />
+
+        </Grid>
+
+
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="3"
+            Grid.ColumnSpan="2"
+            Text="Clear"
+            FontSize="45"
+            Command="{Binding ResetCommand}" />
+
+        <Button
+            Grid.Row="7"
+            Grid.Column="3"
+            Text="×"
+            Command="{Binding MathOperatorCommand}"
+            FontSize="45"
+            CommandParameter="×"/>
+
+        <Button
+            Grid.Row="7"
+            Grid.Column="4"
+            Text="÷"
+            FontSize="45"
+            Command="{Binding MathOperatorCommand}"
+            CommandParameter="÷"/>
+
+        <Button
+            Grid.Row="8"
+            Grid.Column="3"
+            Text="+"
+            FontSize="45"
+            Command="{Binding MathOperatorCommand}"
+            CommandParameter="+"/>
+
+        <Button
+            Grid.Row="8"
+            Grid.Column="4"
+            Text="-"
+            FontSize="45"
+            Command="{Binding MathOperatorCommand}"
+            CommandParameter="-"/>
+        <Button
+            Grid.Row="9"
+            Grid.Column="3"
+            FontSize="45"
+            Grid.ColumnSpan="2"
+            Text="="
+            Command="{Binding CalculateCommand}" />
+
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="0"
+            Text="7"
+            FontSize="28"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="7" />
+
+        <Button
+            Grid.Row="6"
+            FontSize="28"
+            Grid.Column="1"
+            Text="8"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="8" />
+        <Button
+            Grid.Row="6"
+            FontSize="28"
+            Grid.Column="2"
+            Text="9"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="9" />
+
+        <Button
+            Grid.Row="7"
+            FontSize="28"
+            
+            Grid.Column="0"
+            Text="4"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="4" />
+        <Button
+            Grid.Row="7"
+            FontSize="28"
+            Grid.Column="1"
+            Text="5"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="5" />
+
+        <Button
+            Grid.Row="7"
+            FontSize="28"
+            Grid.Column="2"
+            Text="6"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="6" />
+
+        <Button
+            Grid.Row="8"
+            FontSize="28"
+            Grid.Column="0"
+            Text="1"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="1" />
+
+        <Button
+            Grid.Row="8"
+            FontSize="28"
+            Grid.Column="1"
+            Text="2"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="2" />
+        <Button
+            Grid.Row="8"
+            Grid.Column="2"
+            Text="3"
+            FontSize="28"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="3" />
+
+        <Button
+            Grid.Row="9"
+            Grid.Column="0"
+            FontSize="28"
+            Text="0"
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="0" />
+        <Button
+            Grid.Row="9"
+            Grid.Column="1"
+            FontSize="28"
+            Text=","
+            Command="{Binding NumberInputCommand}"
+            CommandParameter="." />
+
+        <Button
+            Grid.Row="9"
+            Grid.Column="2"
+            FontSize="28"
+            Text="Del"
+            Command="{Binding BackspaceCommand}" />
+
+        <BoxView
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Fill"            
+            VerticalOptions="End"
+            HeightRequest="1"
+            />
+
+        <BoxView
+            Grid.Row="7"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Fill"            
+            VerticalOptions="End"
+            HeightRequest="1"
+            />
+
+        <BoxView
+            Grid.Row="8"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Fill"            
+            VerticalOptions="End"
+            HeightRequest="1"
+            />
+
+        <BoxView
+            Grid.Row="6"
+            Grid.RowSpan="4"
+            Grid.Column="0"
+            HorizontalOptions="End"            
+            VerticalOptions="Fill"
+            WidthRequest="1"
+            />
+
+        <BoxView
+            Grid.Row="6"
+            Grid.RowSpan="4"
+            Grid.Column="1"
+            HorizontalOptions="End"            
+            VerticalOptions="Fill"
+            WidthRequest="1"
+            />
+
+
+    </Grid>
+
+</ContentPage>
